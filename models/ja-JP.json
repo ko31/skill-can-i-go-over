@@ -1,0 +1,39 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "通ってもいい",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "GetNewFactIntent",
+          "samples": [
+            "通ってもいい",
+            "通っていい",
+            "通ってもいいを開いて",
+            "通っていいを開いて",
+            "通ってもいいを教えて",
+            "通っていいを教えて",
+            "通ってもいいか",
+            "通っていいか",
+            "通ってもいいかを開いて",
+            "通っていいかを開いて",
+            "通ってもいいかを教えて",
+            "通っていいかを教えて"
+          ],
+          "slots": []
+        }
+      ]
+    }
+  }
+}
