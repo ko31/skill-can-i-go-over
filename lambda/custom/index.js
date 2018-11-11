@@ -3,10 +3,6 @@
 
 const Alexa = require('ask-sdk-core');
 
-//=========================================================================================================================================
-//TODO: このコメント行より下の項目に注目してください。
-//=========================================================================================================================================
-
 const SKILL_NAME = "通ってもいい";
 const HELP_MESSAGE = "通ってもいいか聞きたい時は「通ってもいい」と、終わりたい時は「おしまい」と言ってください。どうしますか？";
 const HELP_REPROMPT = "どうしますか？";
@@ -14,33 +10,28 @@ const FALLBACK_MESSAGE = "";
 const FALLBACK_REPROMPT = "";
 const STOP_MESSAGE = "さようなら";
 
-//=========================================================================================================================================
-//「TODO: ここから下のデータを自分用にカスタマイズしてください。」
-//=========================================================================================================================================
-
 const data = [
-    "どうぞ。",
-    "どうぞどうぞ。",
-    "どうぞ、お通りください。",
-    "さあ、どうぞ。",
-    "いいですよ。",
-    "オッケー。",
-    "もちろん。",
-    "気を付けていってらっしゃいませ。",
-    "うーん、いいでしょう。",
-    "そうだなあ、まいっか。",
+    "<say-as interpret-as='interjection'>オッケー</say-as>",
+    "<say-as interpret-as='interjection'>オッケーです</say-as>",
+    "<say-as interpret-as='interjection'>どうぞ</say-as>",
+    "<say-as interpret-as='interjection'>どうぞごゆっくり</say-as>",
+    "<say-as interpret-as='interjection'>いってらっしゃい</say-as>",
+    "<say-as interpret-as='interjection'>もちろんです</say-as>",
+    "<say-as interpret-as='interjection'>どうぞ</say-as><say-as interpret-as='interjection'>いってらっしゃい</say-as>",
+    "<say-as interpret-as='interjection'>う</say-as><break time='500ms'/><say-as interpret-as='interjection'>うぅ</say-as><break time='500ms'/>まいっか",
+    "<say-as interpret-as='interjection'>ええっと</say-as><break time='1000ms'/><say-as interpret-as='interjection'>オッケーです</say-as>",
+    "<say-as interpret-as='interjection'>えっとお</say-as><break time='1000ms'/><say-as interpret-as='interjection'>どうぞ</say-as>",
+    "<say-as interpret-as='interjection'>んーと</say-as><say-as interpret-as='interjection'>どうぞごゆっくり</say-as>",
+    "<say-as interpret-as='interjection'>う</say-as><break time='500ms'/><say-as interpret-as='interjection'>うぅ</say-as><break time='500ms'/><say-as interpret-as='interjection'>ええっと</say-as><break time='1000ms'/><say-as interpret-as='interjection'>オッケーです</say-as>",
     "一分以内に戻ってきてくださいね。",
     "じゅっぷん以内に戻ってきてくださいね。",
     "一時間以内に戻ってきてくださいね。",
-    "いやです。",
-    "今はダメです。",
-    "通ってはいけません。"
+    "<say-as interpret-as='interjection'>ごめんなさい</say-as><break time='500ms'/>通ってはいけません。<say-as interpret-as='interjection'>また後ほど</say-as>",
+    "<say-as interpret-as='interjection'>ごめんなさい</say-as><break time='500ms'/>今は通れません。<say-as interpret-as='interjection'>ドンマイ</say-as>",
+    "<say-as interpret-as='interjection'>ええっと</say-as><break time='1000ms'/><say-as interpret-as='interjection'>ごめんなさい</say-as>",
+    "<say-as interpret-as='interjection'>えっとお</say-as><break time='1000ms'/><say-as interpret-as='interjection'>また後ほど</say-as>",
+    "<say-as interpret-as='interjection'>んーと</say-as><break time='1000ms'/><say-as interpret-as='interjection'>どうぞ</say-as>"
 ];
-
-
-//=========================================================================================================================================
-//この行から下のコードに変更を加えると、スキルが動作しなくなるかもしれません。わかる人のみ変更を加えてください。  
-//=========================================================================================================================================
 
 const GetNewFactHandler = {
     canHandle(handlerInput) {
