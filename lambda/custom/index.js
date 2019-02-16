@@ -42,11 +42,14 @@ const GetNewFactHandler = {
     },
     handle(handlerInput) {
       const randomFact = data[Math.floor(Math.random() * data.length)];
+      const randomFactText = randomFact.replace(/<("[^"]*"|'[^']*'|[^'">])*>/g,'');
       const speechOutput = randomFact;
+      const smallImageUrl = 'https://s3-ap-northeast-1.amazonaws.com/gosign-alexa-assets/lazily-talk/woman-720x480.png';
+      const largeImageUrl = 'https://s3-ap-northeast-1.amazonaws.com/gosign-alexa-assets/lazily-talk/woman-1200x800.png';
   
       return handlerInput.responseBuilder
         .speak(speechOutput)
-        .withSimpleCard(SKILL_NAME, randomFact)
+        .withStandardCard(SKILL_NAME, randomFactText , smallImageUrl, largeImageUrl)
         .getResponse();
     },
   };
